@@ -6,3 +6,11 @@ python-dotenv
 PyJWT
 bcrypt
 email-validator
+certififastapi
+uvicorn[standard]
+pydantic-settings
+pymongo
+python-dotenv
+PyJWT
+bcrypt
+email-validator
