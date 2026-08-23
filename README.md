@@ -79,3 +79,4 @@ npm run dev
 ## Phase boundary
 
 No machine-learning predictions are generated in Phase 3. Dataset preparation and preprocessing begin in Phase 4, where milk yield is treated as a regression target.
+# LactoVision
