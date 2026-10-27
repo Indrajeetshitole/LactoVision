@@ -1,0 +1,2 @@
+MAE_kg,RMSE_kg,R2,MAPE_percent,model,target,train_rows,test_rows,train_unique_cows,test_unique_cows,train_test_cow_overlap,feature_count,training_seconds,evaluated_at_utc,dataset_note
+1.6284153477600616,2.033414527880005,0.893978429332241,6.622063281193056,Random Forest Regression,daily_milk_yield_kg,40000,10000,160,40,0,40,1.055,2026-10-27T17:35:05.797888+00:00,Synthetic integrated dataset; results are not real-farm validation.

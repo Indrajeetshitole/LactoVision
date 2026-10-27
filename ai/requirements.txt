@@ -1,0 +1,11 @@
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+joblib
+fastapi
+uvicorn[standard]
+pydantic
+# Required for the specified ANN and Deep Learning models:
+tensorflow

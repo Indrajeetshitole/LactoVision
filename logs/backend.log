@@ -1,0 +1,93 @@
+INFO:     Started server process [45182]
+INFO:     Waiting for application startup.
+2026-10-27 22:25:25,216 | ERROR | lactovision | MongoDB startup connection failed: SSL handshake failed: ac-qr3logr-shard-00-02.4f8avpp.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1028) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-qr3logr-shard-00-01.4f8avpp.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1028) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-qr3logr-shard-00-00.4f8avpp.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1028) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 5.0s, Topology Description: <TopologyDescription id: 6ae0d7786d8f24db4bd9fb92, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qr3logr-shard-00-00.4f8avpp.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qr3logr-shard-00-00.4f8avpp.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1028) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-qr3logr-shard-00-01.4f8avpp.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qr3logr-shard-00-01.4f8avpp.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1028) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-qr3logr-shard-00-02.4f8avpp.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qr3logr-shard-00-02.4f8avpp.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1028) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+Traceback (most recent call last):
+  File "/Users/indrajeet/Downloads/LactoVision_Phase5_Ready /backend/app/main.py", line 31, in lifespan
+    connect_db()
+    ~~~~~~~~~~^^
+  File "/Users/indrajeet/Downloads/LactoVision_Phase5_Ready /backend/app/database.py", line 18, in connect_db
+    _client.admin.command("ping")
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/indrajeet/Downloads/LactoVision_Phase5_Ready /.venv/lib/python3.13/site-packages/pymongo/_csot.py", line 126, in csot_wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/indrajeet/Downloads/LactoVision_Phase5_Ready /.venv/lib/python3.13/site-packages/pymongo/synchronous/database.py", line 946, in command
+    return self._client._retryable_read(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        inner, read_preference, session, command_name, None, False, is_run_command=True
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/indrajeet/Downloads/LactoVision_Phase5_Ready /.venv/lib/python3.13/site-packages/pymongo/synchronous/mongo_client.py", line 2116, in _retryable_read
+    return self._retry_internal(
+           ~~~~~~~~~~~~~~~~~~~~^
+        func,
+        ^^^^^
+    ...<9 lines>...
+        is_aggregate_write=is_aggregate_write,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/indrajeet/Downloads/LactoVision_Phase5_Ready /.venv/lib/python3.13/site-packages/pymongo/_csot.py", line 126, in csot_wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/indrajeet/Downloads/LactoVision_Phase5_Ready /.venv/lib/python3.13/site-packages/pymongo/synchronous/mongo_client.py", line 2077, in _retry_internal
+    ).run()
+      ~~~^^
+  File "/Users/indrajeet/Downloads/LactoVision_Phase5_Ready /.venv/lib/python3.13/site-packages/pymongo/synchronous/mongo_client.py", line 2947, in run
+    res = self._read() if self._is_read else self._write()
+          ~~~~~~~~~~^^
+  File "/Users/indrajeet/Downloads/LactoVision_Phase5_Ready /.venv/lib/python3.13/site-packages/pymongo/synchronous/mongo_client.py", line 3175, in _read
+    self._server = self._get_server()
+                   ~~~~~~~~~~~~~~~~^^
+  File "/Users/indrajeet/Downloads/LactoVision_Phase5_Ready /.venv/lib/python3.13/site-packages/pymongo/synchronous/mongo_client.py", line 3120, in _get_server
+    return self._client._select_server(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self._server_selector,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        operation_id=self._operation_id,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/indrajeet/Downloads/LactoVision_Phase5_Ready /.venv/lib/python3.13/site-packages/pymongo/synchronous/mongo_client.py", line 1917, in _select_server
+    server = topology.select_server(
+        server_selector,
+    ...<2 lines>...
+        operation_id=operation_id,
+    )
+  File "/Users/indrajeet/Downloads/LactoVision_Phase5_Ready /.venv/lib/python3.13/site-packages/pymongo/synchronous/topology.py", line 357, in select_server
+    server = self._select_server(
+        selector,
+    ...<4 lines>...
+        operation_id=operation_id,
+    )
+  File "/Users/indrajeet/Downloads/LactoVision_Phase5_Ready /.venv/lib/python3.13/site-packages/pymongo/synchronous/topology.py", line 331, in _select_server
+    servers = self.select_servers(
+        selector,
+    ...<4 lines>...
+        deprioritized_servers,
+    )
+  File "/Users/indrajeet/Downloads/LactoVision_Phase5_Ready /.venv/lib/python3.13/site-packages/pymongo/synchronous/topology.py", line 249, in select_servers
+    server_descriptions = self._select_servers_loop(
+        selector,
+    ...<4 lines>...
+        deprioritized_servers=deprioritized_servers,
+    )
+  File "/Users/indrajeet/Downloads/LactoVision_Phase5_Ready /.venv/lib/python3.13/site-packages/pymongo/synchronous/topology.py", line 297, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+        f"{self._error_message(selector)}, Timeout: {timeout}s, Topology Description: {self.description!r}"
+    )
+pymongo.errors.ServerSelectionTimeoutError: SSL handshake failed: ac-qr3logr-shard-00-02.4f8avpp.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1028) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-qr3logr-shard-00-01.4f8avpp.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1028) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-qr3logr-shard-00-00.4f8avpp.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1028) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 5.0s, Topology Description: <TopologyDescription id: 6ae0d7786d8f24db4bd9fb92, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qr3logr-shard-00-00.4f8avpp.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qr3logr-shard-00-00.4f8avpp.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1028) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-qr3logr-shard-00-01.4f8avpp.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qr3logr-shard-00-01.4f8avpp.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1028) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-qr3logr-shard-00-02.4f8avpp.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qr3logr-shard-00-02.4f8avpp.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1028) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:54506 - "GET /docs?utm_source=chatgpt.com HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54506 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54521 - "OPTIONS /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54521 - "POST /api/auth/login HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54569 - "GET /docs?utm_source=chatgpt.com HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54569 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54581 - "POST /api/auth/login HTTP/1.1" 503 Service Unavailable
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+2026-10-27 22:54:10,082 | INFO | backend.app.database | MongoDB connection closed
+INFO:     Application shutdown complete.
+INFO:     Finished server process [45182]

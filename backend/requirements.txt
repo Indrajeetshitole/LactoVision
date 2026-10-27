@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+pydantic-settings
+pymongo
+python-dotenv
+PyJWT
+bcrypt
+email-validator
+
+pandas==2.2.3
+numpy==2.3.5
+scikit-learn==1.8.0
+joblib==1.5.3

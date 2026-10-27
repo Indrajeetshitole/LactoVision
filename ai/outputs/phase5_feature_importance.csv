@@ -1,0 +1,68 @@
+feature,importance
+num__feed_quantity_kg_dm,0.1268801534623091
+cat__breed_group_Indigenous,0.11340976115385147
+num__body_weight_kg,0.10478905634675784
+cat__breed_Holstein Friesian,0.09676959329082482
+num__morning_feed_kg,0.0848060014012838
+num__dry_matter_kg,0.06036254918169329
+num__afternoon_feed_kg,0.05285158723671259
+cat__breed_group_Exotic,0.04878749929940227
+num__metabolizable_energy_mj,0.045363452165060374
+num__evening_feed_kg,0.037128750201753234
+cat__breed_group_Crossbred,0.0310878982093924
+cat__breed_Jersey,0.029684416452960643
+num__feed_quality_score,0.02940411486684734
+cat__breed_Gir,0.02282684207111761
+cat__breed_HF Cross,0.015625829633111224
+cat__breed_Sahiwal,0.011764063365922025
+cat__breed_Jersey Cross,0.011189622211549946
+num__fat_g,0.010412336182689358
+num__crude_protein_g,0.010260232285244673
+num__ndf_g,0.010258129770900588
+num__age_years,0.0073309061526248345
+num__parity,0.004221569315114128
+num__lactation_number,0.003921718649962439
+num__phosphorus_g,0.0029325383694755805
+num__days_in_milk,0.0026130481039326157
+num__days_since_calving,0.0025946231474085436
+num__calcium_g,0.0023876852166723646
+num__water_intake_l,0.0023827607590617968
+num__ambient_temperature_c,0.0016457878990062272
+num__thi,0.0015882747666688425
+num__body_temperature_c,0.0015451040428744946
+cat__disease_status_No,0.0013854298790343055
+num__relative_humidity_pct,0.0012648826259268689
+cat__disease_status_Yes,0.0012479666050263971
+num__heart_rate_bpm,0.0011270364369304338
+num__respiration_rate_bpm,0.0010917594738000431
+num__body_condition_score,0.0010368380544249203
+cat__health_status_At Risk,0.0010291608689211734
+cat__lactation_stage_Peak,0.001011027494991502
+cat__lactation_stage_Mid,0.0006279069213182785
+cat__disease_type_Mastitis,0.0004314080760458699
+cat__season_Monsoon,0.00028332636375051054
+cat__season_Winter,0.0002738583050915381
+cat__season_Summer,0.0002408666903341059
+num__feed_frequency,0.0002181912997898499
+cat__lactation_stage_Early,0.00019774662219956414
+cat__season_Post-Monsoon,0.00016531575354832834
+cat__feed_type_TMR,0.0001641947930972719
+cat__health_status_Healthy,0.00016297996322095764
+cat__weather_condition_Normal,0.00015843329677860362
+cat__feed_type_Green Fodder,0.00012015716328237984
+cat__weather_condition_Humid,0.00011469253671169464
+cat__feed_type_Silage + Concentrate,0.00011190070505649646
+cat__feed_type_Mixed Ration,0.00010728520445234304
+cat__feed_type_Dry Fodder,9.25303017848148e-05
+cat__weather_condition_Hot,9.236953266160571e-05
+cat__vaccination_status_Due,8.974623155166452e-05
+cat__health_status_Watch,8.062419884311022e-05
+cat__vaccination_status_Up-to-date,7.846462316840373e-05
+cat__weather_condition_Rainy,5.73900067868195e-05
+cat__disease_type_Digestive,4.388181487844057e-05
+cat__disease_type_Lameness,3.263431224192963e-05
+cat__disease_type_Heat Stress,2.1245829051768413e-05
+cat__disease_type_Respiratory,1.2842803111696398e-05
+cat__sex_Female,0.0
+cat__treatment_status_Required,0.0
+cat__symptoms_Abnormal signs observed,0.0
